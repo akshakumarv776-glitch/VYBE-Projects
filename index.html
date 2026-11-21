@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYBE | Explore</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h1 class="logo">VYBE<span>.</span></h1>
+
+        <nav>
+            <a href="#">⌂ &nbsp; Home</a>
+            <a href="#" class="active">⌕ &nbsp; Explore</a>
+            <a href="#">♡ &nbsp; Notifications</a>
+            <a href="#">✉ &nbsp; Messages</a>
+            <a href="#">☻ &nbsp; Profile</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Discover your world.</p>
+            <small>VYBE Social Platform</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Explore</h2>
+                <p>Discover people, ideas and communities.</p>
+            </div>
+            <div class="topbar-actions">
+                <button id="themeToggle" class="theme-toggle" type="button"
+                        aria-label="Switch to light mode" aria-pressed="false">
+                    ☀ Light mode
+                </button>
+                <div class="profile-icon">U</div>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <h2>Find your next VYBE</h2>
+            <p>Search users, posts and communities.</p>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="text" id="searchInput"
+                       placeholder="Search anything...">
+                <button id="searchButton">Search</button>
+            </div>
+        </section>
+
+        <section id="searchResults" class="section hidden">
+            <h2>Search Results</h2>
+            <div id="resultsContainer" class="content-grid"></div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Trending Now</h2>
+                    <p>Popular content people are talking about.</p>
+                </div>
+                <span class="tag">TRENDING</span>
+            </div>
+            <div id="trendingPosts" class="content-grid"></div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Discover Creators</h2>
+                    <p>Meet people who share your interests.</p>
+                </div>
+            </div>
+            <div id="creators" class="content-grid"></div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Recommended For You</h2>
+                    <p>Suggestions based on topics you may like.</p>
+                </div>
+            </div>
+            <div id="recommendations" class="content-grid"></div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Communities</h2>
+                    <p>Find your people and join the conversation.</p>
+                </div>
+            </div>
+            <div id="communities" class="content-grid"></div>
+        </section>
+
+    </main>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
