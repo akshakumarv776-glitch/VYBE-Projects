@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Authentication Flask App",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "app",
+            "cwd": "${workspaceFolder}/authentication_project",
+            "env": {
+                "FLASK_DEBUG": "1"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

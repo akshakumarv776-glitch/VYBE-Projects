@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Authentication App",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "app.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/authentication_project"
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
