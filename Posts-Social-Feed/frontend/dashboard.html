@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYBE | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <button class="back-button" id="back-button" type="button" aria-label="Go back to the previous page">
+        <span aria-hidden="true">←</span>
+        <span>Back</span>
+    </button>
+    <div class="dashboard-shell">
+        <aside class="sidebar glass">
+            <a class="brand" href="/dashboard" aria-label="VYBE dashboard"><span>V</span> VYBE</a>
+            <nav aria-label="Dashboard navigation">
+                <p class="label">MENU</p>
+                <a class="active" href="/dashboard"><span>⌂</span> Dashboard</a>
+                <a href="/"><span>▤</span> Social Feed</a>
+                <a href="/"><span>＋</span> Create Post</a>
+                <a href="/"><span>◎</span> Discover</a>
+            </nav>
+        </aside>
+
+        <main>
+            <header class="topbar glass">
+                <div>
+                    <p class="eyebrow">YOUR COMMUNITY</p>
+                    <h1>Welcome back, Alex <span>✦</span></h1>
+                </div>
+                <div class="profile-chip">
+                    <div class="avatar">A</div>
+                    <div><b>Alex Morgan</b><small>@alexm</small></div>
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">☀</button>
+                </div>
+            </header>
+
+            <section class="stats" aria-label="Community statistics">
+                <article class="stat glass">
+                    <p class="label">TOTAL POSTS</p>
+                    <strong>128</strong>
+                    <span class="positive">+12 this week</span>
+                </article>
+                <article class="stat glass">
+                    <p class="label">FOLLOWERS</p>
+                    <strong>2.4K</strong>
+                    <span class="positive">+84 this month</span>
+                </article>
+                <article class="stat glass">
+                    <p class="label">ENGAGEMENT</p>
+                    <strong>68%</strong>
+                    <span class="positive">+6.2% growth</span>
+                </article>
+                <article class="stat glass">
+                    <p class="label">COMMUNITY</p>
+                    <strong>42</strong>
+                    <span>Active circles</span>
+                </article>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="panel glass activity">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="label">YOUR MOMENTS</p>
+                            <h2>Recent activity</h2>
+                        </div>
+                        <a href="/">View feed →</a>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon pink">♥</div>
+                        <div><b>Sophia liked your post</b><small>2 minutes ago</small></div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon blue">＋</div>
+                        <div><b>Jordan started following you</b><small>18 minutes ago</small></div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon purple">✦</div>
+                        <div><b>Your post reached 100 views</b><small>1 hour ago</small></div>
+                    </div>
+                </article>
+
+                <article class="panel glass spotlight">
+                    <p class="label">FEATURED CIRCLE</p>
+                    <div class="orb">✦</div>
+                    <h2>Make your moments matter.</h2>
+                    <p>Little updates. Big memories. All yours.</p>
+                    <a href="/">Share a moment</a>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script>
+        const backButton = document.getElementById("back-button");
+        backButton.addEventListener("click", function () {
+            const referrer = document.referrer;
+            if (referrer && new URL(referrer).origin === window.location.origin) {
+                window.location.href = referrer;
+                return;
+            }
+            window.location.assign("/");
+        });
+    </script>
+</body>
+</html>
