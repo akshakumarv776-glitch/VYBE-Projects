@@ -1,4 +1,9 @@
+
 # VYBE-Projects
+
+## Projects
+
+- [VYBE Chat](message-chats/README.md): responsive full-stack messaging app with a Python API and SQLite database.
 
 ## Run locally
 
@@ -24,4 +29,3 @@ Run the API tests with `npm test`.
 - `DELETE /api/posts/:id` — delete one of your posts (requires authentication).
 
 For authenticated endpoints, send the login or registration token as `Authorization: Bearer <token>`. Passwords are hashed before storage; the database stores users and posts locally in SQLite.
-
