@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --purple-950: #21103d;
+    --purple-900: #32175f;
+    --purple-700: #7040ad;
+    --purple-600: #8254bd;
+    --purple-300: #cbb3ed;
+    --glass: rgba(255, 255, 255, 0.13);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    overflow-x: hidden;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 14% 18%, rgba(194, 146, 255, 0.42), transparent 24rem),
+        radial-gradient(circle at 82% 78%, rgba(111, 70, 177, 0.48), transparent 26rem),
+        linear-gradient(135deg, #241247 0%, #563091 52%, #241247 100%);
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(10px);
+}
+
+body::before {
+    top: -90px;
+    right: -50px;
+}
+
+body::after {
+    bottom: -110px;
+    left: -70px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    padding: 42px 38px 36px;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), var(--glass));
+    box-shadow:
+        0 24px 70px rgba(18, 7, 39, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 8vw, 2.65rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 1.75rem;
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    margin: 24px 0 8px;
+    font-size: 1rem;
+}
+
+p {
+    margin: 14px 0;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.55;
+}
+
+form {
+    margin-top: 8px;
+}
+
+input {
+    width: 100%;
+    height: 52px;
+    margin: 7px 0;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.09);
+    color: var(--text);
+    font: 500 15px "DM Sans", "Segoe UI", sans-serif;
+    transition: 180ms ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+input:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+input:focus {
+    border-color: rgba(222, 200, 255, 0.75);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 0 4px rgba(196, 156, 245, 0.12);
+}
+
+button,
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #9871ca, #7045a5);
+    box-shadow: 0 10px 24px rgba(37, 15, 69, 0.24);
+    color: white;
+    font: 700 15px "DM Sans", "Segoe UI", sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.07);
+    box-shadow: 0 14px 30px rgba(37, 15, 69, 0.34);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(215, 186, 255, 0.72);
+    outline-offset: 3px;
+}
+
+a {
+    color: #e2d1f7;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 205, 223, 0.24);
+    border-radius: 10px;
+    background: rgba(255, 115, 166, 0.11);
+    color: #ffeaf3;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#error {
+    min-height: 20px;
+    margin: 4px 0;
+    color: #ffd5e5;
+    font-size: 13px;
+}
+
+@media (max-width: 520px) {
+    body {
+        align-items: start;
+        padding: 18px 12px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: auto;
+        padding: 34px 22px 28px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2.15rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}

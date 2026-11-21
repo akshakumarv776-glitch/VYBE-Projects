@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}User Registration{% endblock %}
+
+{% block content %}
+    <h2>Create Account</h2>
+
+    {% include "_messages.html" %}
+
+    <form method="POST" action="{{ url_for('register') }}" onsubmit="return validateRegister()">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <input type="text" id="name" name="name"
+               placeholder="Full Name" autocomplete="name" required>
+
+        <input type="email" id="email" name="email"
+               placeholder="Email Address" autocomplete="email" required>
+
+        <input type="password" id="password" name="password"
+               placeholder="Password" autocomplete="new-password"
+               minlength="8" required>
+
+        <p id="error"></p>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already registered?
+        <a href="{{ url_for('login') }}">Login</a>
+    </p>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

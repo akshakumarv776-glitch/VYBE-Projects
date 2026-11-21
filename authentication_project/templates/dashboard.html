@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+
+    <h2>Welcome, {{ session['user_name'] }}!</h2>
+
+    {% include "_messages.html" %}
+
+    <p>You have successfully logged in.</p>
+
+    <h3>Account Management</h3>
+
+    <p>Account Status: Active</p>
+
+    <form method="POST" action="{{ url_for('logout') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Logout</button>
+    </form>
+{% endblock %}

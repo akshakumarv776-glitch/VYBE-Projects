@@ -1,31 +1,97 @@
-
 # VYBE-Projects
 
 ## Projects
 
-- [VYBE Chat](message-chats/README.md): responsive full-stack messaging app with a Python API and SQLite database.
+- [VYBE Chat](message-chats/README.md): Responsive full-stack messaging app with a Python API and SQLite database.
+- Authentication Project: Flask app with registration, login, logout, dashboard and password reset.
 
-## Run locally
+---
 
-The project uses Node.js 20 or newer and SQLite. From the repository root:
+## 1. Authentication Project (Flask)
 
-1. Install dependencies with `npm install`.
-2. Copy `.env.example` to `.env` and replace `JWT_SECRET` with a random value of at least 32 characters.
-3. Start the app with `npm start`.
-4. Open `http://127.0.0.1:3000`. The SQLite database is created at `backend/data/vybe.sqlite`.
+### Run locally
 
-The server also serves the static frontend at `/pages/index.html`. Set `DATABASE_PATH` to use a different SQLite file, or set `HOST` and `PORT` to change the bind address and port.
+Open the VS Code terminal:
 
-Run the API tests with `npm test`.
+```bash
+cd authentication_project
+python -m venv venv
+```
 
-## API
+Activate virtual environment on Windows:
 
-- `GET /api/health` — check that the API and database are available.
-- `POST /api/auth/register` — create an account with `{ "username", "email", "password" }`. Usernames must be 3-24 letters, numbers, or underscores; passwords must be 8-128 characters and no more than 72 UTF-8 bytes.
-- `POST /api/auth/login` — sign in with `{ "email", "password" }`.
-- `GET /api/users/me` — get the signed-in user's profile.
-- `GET /api/posts?limit=20` — get the newest posts (limit 1–50).
-- `POST /api/posts` — create a post with `{ "content" }` (requires authentication).
-- `DELETE /api/posts/:id` — delete one of your posts (requires authentication).
+```bash
+venv\Scripts\activate
+```
 
-For authenticated endpoints, send the login or registration token as `Authorization: Bearer <token>`. Passwords are hashed before storage; the database stores users and posts locally in SQLite.
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+python app.py
+```
+
+Open http://127.0.0.1:5000
+
+### Authentication Notes
+
+- `database.db` is created automatically on first run.
+- Set the `SECRET_KEY` environment variable in production.
+- No email is sent yet. In debug mode, the password-reset link is shown on screen.
+
+---
+
+## 2. Main VYBE Project (Node.js)
+
+The project uses Node.js 20 or newer and SQLite.
+
+### Run locally
+
+From the repository root:
+
+```bash
+npm install
+```
+
+Copy `.env.example` to `.env` and configure `JWT_SECRET`.
+
+Start the application:
+
+```bash
+npm start
+```
+
+Open http://127.0.0.1:3000
+
+### API Testing
+
+```bash
+npm test
+```
+
+### API Endpoints
+
+- `GET /api/health` — Check API and database availability.
+- `POST /api/auth/register` — Create an account.
+- `POST /api/auth/login` — Sign in.
+- `GET /api/users/me` — Get the signed-in user's profile.
+- `GET /api/posts?limit=20` — Get newest posts.
+- `POST /api/posts` — Create a post.
+- `DELETE /api/posts/:id` — Delete your post.
+
+For authenticated endpoints, send the login or registration token as:
+
+```text
+Authorization: Bearer <token>
+```
+
+Passwords are hashed before storage. User and post data are stored locally in SQLite.
+
+---
+
+## Security
