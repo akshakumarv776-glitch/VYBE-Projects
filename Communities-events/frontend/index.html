@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities & Groups</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Communities & Groups</h1>
+        <p>Connect, Share and Discuss Your Interests</p>
+    </header>
+
+    <nav>
+        <a href="#create">Create Community</a>
+        <a href="#groups">Join Groups</a>
+        <a href="#interests">Interests</a>
+        <a href="#posts">Discussions</a>
+        <a href="#moderator">Moderator</a>
+    </nav>
+
+    <main>
+
+        <!-- Create Community -->
+        <section id="create">
+            <h2>Create Communities</h2>
+            <form id="createForm">
+                <input type="text" id="groupName"
+                    placeholder="Enter community name" required>
+
+                <textarea id="groupDescription"
+                    placeholder="Enter community description" required></textarea>
+
+                <button type="submit">Create Community</button>
+            </form>
+        </section>
+
+        <!-- Join and Leave Groups -->
+        <section id="groups">
+            <h2>Join and Leave Groups</h2>
+            <div id="groupList">
+                <p>Loading communities...</p>
+            </div>
+        </section>
+
+        <!-- Interest Based Groups -->
+        <section id="interests">
+            <h2>Interest-Based Groups</h2>
+
+            <div class="interest-container">
+                <div class="interest-card">Technology</div>
+                <div class="interest-card">Education</div>
+                <div class="interest-card">Sports</div>
+                <div class="interest-card">Music</div>
+                <div class="interest-card">Gaming</div>
+                <div class="interest-card">Photography</div>
+            </div>
+        </section>
+
+        <!-- Community Posts and Discussions -->
+        <section id="posts">
+            <h2>Community Posts and Discussions</h2>
+
+            <form id="postForm">
+                <textarea id="postContent"
+                    placeholder="Write your community post..."
+                    required></textarea>
+
+                <button type="submit">Publish Post</button>
+            </form>
+
+            <div id="postList">
+                <p>No posts yet.</p>
+            </div>
+        </section>
+
+        <!-- Owner and Moderator Controls -->
+        <section id="moderator">
+            <h2>Community Owner / Moderator Controls</h2>
+
+            <div class="moderator-card">
+                <h3>Admin Controls</h3>
+                <p>Manage community members and discussions.</p>
+
+                <button onclick="deleteAllPosts()">
+                    Delete All Posts
+                </button>
+
+                <button onclick="deleteAllGroups()">
+                    Delete All Communities
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Communities & Groups Module</p>
+        <p>Connect • Share • Discuss</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html> 
